@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-show="visible" class="header-detail">
+    <div class="header-detail" v-show="visible">
       <div class="detail-wrapper clear-fix">
         <div class="detail-main">
           <h1 class="name">{{seller.name}}</h1>
@@ -38,10 +38,8 @@
 <script>
   import SupportIco from 'components/support-ico/support-ico.vue'
   import Star from 'components/star/star.vue'
-  import popupMixin from  'common/mixins/popup'
 
   export default {
-    mixins: [popupMixin],
     name: 'header-detail',
     props: {
       seller: {
@@ -49,6 +47,19 @@
         default () {
           return {}
         }
+      }
+    },
+    data() {
+      return {
+        visible: false
+      }
+    },
+    methods: {
+      show() {
+        this.visible = true
+      },
+      hide() {
+        this.visible = false
       }
     },
     components: {
