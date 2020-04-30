@@ -16,4 +16,5 @@ module.exports = {
     'space-before-function-paren': 0,
     'indent': 0
   }
+
 }
